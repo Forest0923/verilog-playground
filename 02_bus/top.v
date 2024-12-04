@@ -13,4 +13,12 @@ module m_top();
 	initial #100$display("%b", a[2:1]);
 	initial #100$display("%b", b[2:1]);
 	initial #100$display("%b", c[2:1]);
+
+	wire [3:0] d = 4'b1101;
+	initial #200 begin
+		$display("%b", {d, d});
+		$display("%b", {d, d, d});
+		$display("%b", {4{d}});
+		$display("%b", {4{d[2:0]}});
+	end
 endmodule
